@@ -1,3 +1,12 @@
+$(document).ready(function() {
+  $('#weightliftingData').DataTable({
+    "order": [
+      [0, "desc"]
+    ],
+    "paging": false,
+    "info": false
+  });
+});
 
 var mens = $("tr.m").children(".weightCategory").toArray();
 var womens = $("tr.w").children(".weightCategory").toArray();
@@ -22,6 +31,7 @@ function checkQualify(weightCategory, total) {
   }
 
   $("#result").text(result);
+  $("#resultCard").removeClass("d-none");
 
 }
 

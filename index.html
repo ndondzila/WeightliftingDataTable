@@ -41,9 +41,14 @@
     </div>
 
     <div class="col-4">
-      <h2 id="result"></h2>
+      <div id="resultCard" class="card d-none">
+        <div id="result" class="card-body">
+
+        </div>
+      </div>
     </div>
   </div>
+
   <br />
   <br />
 
@@ -258,12 +263,6 @@
       </table>
     </div>
   </div>
-
-  <script>
-    $(document).ready(function() {
-      $('#weightliftingData').DataTable();
-    });
-  </script>
 
   <script src="data.js" charset="utf-8"></script>
 </body>
