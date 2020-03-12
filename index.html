@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <title>2020 USAW Qualifying Totals</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+</head>
+
+<body style="padding: 5%" onload="genderToggle()">
+  <h1>2020 USAW Qualifying Totals</h1>
+  <br />
+
+  <div class="row">
+    <div class="col-4">
+
+        <div class="form-group">
+          <label>Competition gender:</label>
+          <select id="gender" name="gender" class="form-control" onchange="genderToggle()">
+            <option value="women">Women's</option>
+            <option value="men">Men's</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Weight category:</label>
+          <select id="weightCategory" class="form-control">
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Your total:</label>
+          <input class="form-control" id="userTotal" type="text" />
+        </div>
+        <input type="submit" value="Check if qualified" onclick="checkQualify(weightCategory.value, userTotal.value)" />
+
+    </div>
+
+    <div class="col-4">
+      <h2 id="result"></h2>
+    </div>
+  </div>
+  <br />
+  <br />
+
+
+  <div class="row">
+    <div class="col-10-lg">
+      <table id="weightliftingData" class="display">
+        <thead>
+          <tr>
+            <th>Gender</th>
+            <th>Weight Category</th>
+            <th>American Open Series Qualifying Total</th>
+            <th>American Open Finals Qualifying Total</th>
+            <th>National Championships Qualifying Total</th>
+            <th>American Record Total</th>
+            <th>World Record Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="w45" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">45kg</td>
+            <td class="americanOpenSeries">87kg</td>
+            <td class="americanOpenFinals">118kg</td>
+            <td class="nationals">120kg</td>
+            <td class="americanRecord">181kg</td>
+            <td class="worldRecord">191kg</td>
+          </tr>
+          <tr id="w49" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">45kg</td>
+            <td class="americanOpenSeries">90kg</td>
+            <td class="americanOpenFinals">130kg</td>
+            <td class="nationals">137kg</td>
+            <td class="americanRecord">195kg</td>
+            <td class="worldRecord">212kg</td>
+          </tr>
+          <tr id="w55" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">55kg</td>
+            <td class="americanOpenSeries">99kg</td>
+            <td class="americanOpenFinals">150kg</td>
+            <td class="nationals">159kg</td>
+            <td class="americanRecord">207kg</td>
+            <td class="worldRecord">227kg</td>
+          </tr>
+          <tr id="w59" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">59kg</td>
+            <td class="americanOpenSeries">105kg</td>
+            <td class="americanOpenFinals">160kg</td>
+            <td class="nationals">166kg</td>
+            <td class="americanRecord">213kg</td>
+            <td class="worldRecord">246kg</td>
+          </tr>
+          <tr id="w64" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">64kg</td>
+            <td class="americanOpenSeries">115kg</td>
+            <td class="americanOpenFinals">170kg</td>
+            <td class="nationals">177kg</td>
+            <td class="americanRecord">232kg</td>
+            <td class="worldRecord">261kg</td>
+          </tr>
+          <tr id="w71" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">71kg</td>
+            <td class="americanOpenSeries">126kg</td>
+            <td class="americanOpenFinals">175kg</td>
+            <td class="nationals">185kg</td>
+            <td class="americanRecord">248kg</td>
+            <td class="worldRecord">267kg</td>
+          </tr>
+          <tr id="w76" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">76kg</td>
+            <td class="americanOpenSeries">130kg</td>
+            <td class="americanOpenFinals">180kg</td>
+            <td class="nationals">191kg</td>
+            <td class="americanRecord">245kg</td>
+            <td class="worldRecord">278kg</td>
+          </tr>
+          <tr id="w81" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">81kg</td>
+            <td class="americanOpenSeries">132kg</td>
+            <td class="americanOpenFinals">185kg</td>
+            <td class="nationals">193kg</td>
+            <td class="americanRecord">248kg</td>
+            <td class="worldRecord">283kg</td>
+          </tr>
+          <tr id="w87" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">87kg</td>
+            <td class="americanOpenSeries">137kg</td>
+            <td class="americanOpenFinals">190kg</td>
+            <td class="nationals">194kg</td>
+            <td class="americanRecord">250kg</td>
+            <td class="worldRecord">294kg</td>
+          </tr>
+          <tr id="w87+" class="w">
+            <td class="gender">Women's</td>
+            <td class="weightCategory">+87kg</td>
+            <td class="americanOpenSeries">147kg</td>
+            <td class="americanOpenFinals">195kg</td>
+            <td class="nationals">195kg</td>
+            <td class="americanRecord">290kg</td>
+            <td class="worldRecord">332kg</td>
+          </tr>
+          <tr id="m55" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">55kg</td>
+            <td class="americanOpenSeries">125kg</td>
+            <td class="americanOpenFinals">178kg</td>
+            <td class="nationals">200kg</td>
+            <td class="americanRecord">242kg</td>
+            <td class="worldRecord">294kg</td>
+          </tr>
+          <tr id="m61" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">61kg</td>
+            <td class="americanOpenSeries">140kg</td>
+            <td class="americanOpenFinals">208kg</td>
+            <td class="nationals">210kg</td>
+            <td class="americanRecord">242kg</td>
+            <td class="worldRecord">318kg</td>
+          </tr>
+          <tr id="m67" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">67kg</td>
+            <td class="americanOpenSeries">173kg</td>
+            <td class="americanOpenFinals">230kg</td>
+            <td class="nationals">236kg</td>
+            <td class="americanRecord">272.5kg</td>
+            <td class="worldRecord">339kg</td>
+          </tr>
+          <tr id="m73" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">73kg</td>
+            <td class="americanOpenSeries">177kg</td>
+            <td class="americanOpenFinals">240kg</td>
+            <td class="nationals">265kg</td>
+            <td class="americanRecord">312kg</td>
+            <td class="worldRecord">363kg</td>
+          </tr>
+          <tr id="m81" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">81kg</td>
+            <td class="americanOpenSeries">203kg</td>
+            <td class="americanOpenFinals">267kg</td>
+            <td class="nationals">274kg</td>
+            <td class="americanRecord">347kg</td>
+            <td class="worldRecord">378kg</td>
+          </tr>
+          <tr id="m89" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">89kg</td>
+            <td class="americanOpenSeries">211kg</td>
+            <td class="americanOpenFinals">282kg</td>
+            <td class="nationals">290kg</td>
+            <td class="americanRecord">357kg</td>
+            <td class="worldRecord">387kg</td>
+          </tr>
+          <tr id="m96" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">96kg</td>
+            <td class="americanOpenSeries">221kg</td>
+            <td class="americanOpenFinals">291kg</td>
+            <td class="nationals">303kg</td>
+            <td class="americanRecord">370kg</td>
+            <td class="worldRecord">416kg</td>
+          </tr>
+          <tr id="m102" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">102kg</td>
+            <td class="americanOpenSeries">226kg</td>
+            <td class="americanOpenFinals">293kg</td>
+            <td class="nationals">305kg</td>
+            <td class="americanRecord">380kg</td>
+            <td class="worldRecord">412kg</td>
+          </tr>
+          <tr id="m109" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">109kg</td>
+            <td class="americanOpenSeries">235kg</td>
+            <td class="americanOpenFinals">299kg</td>
+            <td class="nationals">308kg</td>
+            <td class="americanRecord">387kg</td>
+            <td class="worldRecord">435kg</td>
+          </tr>
+          <tr id="m109+" class="m">
+            <td class="gender">Men's</td>
+            <td class="weightCategory">+109kg</td>
+            <td class="americanOpenSeries">240kg</td>
+            <td class="americanOpenFinals">303kg</td>
+            <td class="nationals">311kg</td>
+            <td class="americanRecord">430kg</td>
+            <td class="worldRecord">484kg</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Gender</th>
+            <th>Weight Category</th>
+            <th>American Open Series Qualifying Total</th>
+            <th>American Open Finals Qualifying Total</th>
+            <th>National Championships Qualifying Total</th>
+            <th>American Record Total</th>
+            <th>World Record Total</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#weightliftingData').DataTable();
+    });
+  </script>
+
+  <script src="data.js" charset="utf-8"></script>
+</body>
+
+</html>
